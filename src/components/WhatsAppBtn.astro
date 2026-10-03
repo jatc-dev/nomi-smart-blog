@@ -1,0 +1,18 @@
+---
+const phoneNumber = '5215551234567';
+const message = encodeURIComponent('Hola NOMI SMART, me gustaría recibir más información.');
+const href = `https://wa.me/${phoneNumber}?text=${message}`;
+---
+
+<a
+	href={href}
+	target="_blank"
+	rel="noreferrer"
+	aria-label="Abrir conversación en WhatsApp"
+	class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-emerald-500/30 transition duration-200 hover:scale-105 hover:bg-[#1fb957] focus:outline-none focus:ring-4 focus:ring-emerald-300 sm:bottom-6 sm:right-6 sm:h-16 sm:w-16"
+>
+	<span class="sr-only">WhatsApp</span>
+	<svg viewBox="0 0 32 32" class="h-7 w-7 sm:h-8 sm:w-8" fill="currentColor" aria-hidden="true">
+		<path d="M19.11 17.54c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.09-.16.18-.32.2-.59.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.54-.45-.46-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.28-.96.93-.96 2.27s.98 2.64 1.11 2.82c.14.18 1.92 2.93 4.66 4.11.65.28 1.15.45 1.54.57.65.21 1.25.18 1.72.11.53-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34Zm-3.11 8.84h-.01c-2.21 0-4.39-.59-6.3-1.7l-.45-.27-4.67 1.22 1.25-4.55-.29-.47a12.4 12.4 0 0 1-1.91-6.62c0-6.83 5.56-12.39 12.4-12.39 3.31 0 6.41 1.29 8.76 3.63A12.32 12.32 0 0 1 28.4 15.1c-.01 6.83-5.57 12.39-12.4 12.39Zm10.54-22.95A15.09 15.09 0 0 0 15.99 0C7.18 0 .02 7.16.02 15.96c0 2.81.73 5.56 2.11 7.98L0 32l8.29-2.12a15.92 15.92 0 0 0 7.66 1.95h.01c8.8 0 15.96-7.16 15.96-15.96 0-4.27-1.66-8.28-4.68-11.44Z" />
+	</svg>
+</a>

@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+	{
+		title: 'Liquidación de nómina',
+		description: 'Acompañamiento para revisar, organizar y entender el proceso de cálculo de nómina con mayor control y menor margen de error.',
+		accent: 'from-sky-500 to-cyan-400',
+	},
+	{
+		title: 'Prestaciones sociales',
+		description: 'Orientación sobre prestaciones, criterios de cálculo y buenas prácticas para manejar la información de forma clara y consistente.',
+		accent: 'from-emerald-500 to-teal-400',
+	},
+	{
+		title: 'Seguridad social / PILA',
+		description: 'Explicaciones y recursos para gestionar correctamente obligaciones de seguridad social, aportes y procesos relacionados con PILA.',
+		accent: 'from-amber-500 to-orange-400',
+	},
+	{
+		title: 'Reportes y certificados',
+		description: 'Generación y revisión de reportes, constancias y certificados que faciliten el seguimiento, validación y documentación interna.',
+		accent: 'from-fuchsia-500 to-pink-400',
+	},
+];
+---
+
+<Layout
+	title="Servicios | NOMI SMART"
+	description="Conoce los servicios clave de NOMI SMART: liquidación de nómina, prestaciones sociales, seguridad social / PILA y reportes y certificados."
+>
+	<section class="rounded-[2rem] border border-slate-200 bg-white px-6 py-12 shadow-sm sm:px-10 lg:px-14">
+		<div class="max-w-3xl">
+			<p class="inline-flex rounded-full bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+				Servicios
+			</p>
+			<h1 class="mt-5 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+				Servicios clave para operar nómina y seguridad social con más claridad.
+			</h1>
+			<p class="mt-6 text-base leading-7 text-slate-600 sm:text-lg">
+				NOMI SMART concentra información y recursos útiles para fortalecer procesos, comprender obligaciones y tomar mejores decisiones operativas.
+			</p>
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+			{services.map((service) => (
+				<article class="group rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:bg-white hover:shadow-lg hover:shadow-slate-200/60">
+					<div class={`h-2 w-16 rounded-full bg-gradient-to-r ${service.accent}`}></div>
+					<h2 class="mt-5 text-2xl font-black tracking-tight text-slate-950">{service.title}</h2>
+					<p class="mt-4 text-sm leading-6 text-slate-600">{service.description}</p>
+					<div class="mt-6 inline-flex text-sm font-semibold text-slate-900 transition group-hover:translate-x-1">Más información</div>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="mt-10 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+		<article class="rounded-[1.75rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-950/10">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">Qué incluye</p>
+			<h2 class="mt-4 text-3xl font-black tracking-tight text-white">Procesos más ordenados, menos dudas y mejor control</h2>
+			<p class="mt-5 text-base leading-7 text-slate-300">
+				Cada servicio está pensado para dar contexto, reducir incertidumbre y ayudarte a entender mejor las piezas que forman una operación de nómina robusta.
+			</p>
+		</article>
+
+		<article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Aplicación práctica</p>
+			<ul class="mt-5 space-y-4 text-sm leading-6 text-slate-600">
+				<li class="rounded-2xl bg-slate-50 p-4">Revisión de procesos y criterios de trabajo.</li>
+				<li class="rounded-2xl bg-slate-50 p-4">Explicaciones claras para equipos operativos y administrativos.</li>
+				<li class="rounded-2xl bg-slate-50 p-4">Materiales y recursos para documentar y mejorar la operación.</li>
+				<li class="rounded-2xl bg-slate-50 p-4">Enfoque práctico para identificar oportunidades de mejora.</li>
+			</ul>
+		</article>
+	</section>
+</Layout>

@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VideoCard from '../components/VideoCard.astro';
+
+const videos = [
+	{
+		title: 'Entiende tu desprendible de nómina',
+		description: 'Aprende a identificar cada concepto del desprendible para interpretar tu nómina con mayor claridad y confianza.',
+		duration: '08:45',
+		category: 'Nómina',
+		videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+	},
+	{
+		title: 'Conoce las prestaciones sociales',
+		description: 'Repasa los puntos básicos para comprender qué son y cómo se relacionan con la operación laboral cotidiana.',
+		duration: '10:12',
+		category: 'Prestaciones',
+		videoUrl: 'https://www.youtube.com/embed/oHg5SJYRHA0',
+	},
+	{
+		title: 'Aprende sobre horas extras y recargos',
+		description: 'Revisa criterios y ejemplos para ubicar correctamente horas extra, recargos y momentos de cálculo.',
+		duration: '09:30',
+		category: 'Jornada laboral',
+		videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U',
+	},
+	{
+		title: 'Actualizaciones de la legislación laboral',
+		description: 'Mantente al día con cambios relevantes que pueden afectar tu forma de operar y documentar procesos.',
+		duration: '12:05',
+		category: 'Cumplimiento',
+		videoUrl: 'https://www.youtube.com/embed/jNQXAC9IVRw',
+	},
+];
+---
+
+<Layout
+	title="Capacitaciones | NOMI SMART"
+	description="Mira las capacitaciones en video de NOMI SMART sobre desprendible de nómina, prestaciones sociales, horas extras, recargos y legislación laboral."
+>
+	<section class="rounded-[2rem] border border-slate-200 bg-white px-6 py-12 shadow-sm sm:px-10 lg:px-14">
+		<div class="max-w-3xl">
+			<p class="inline-flex rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">
+				Capacitaciones en video
+			</p>
+			<h1 class="mt-5 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+				Aprende con videos claros y prácticos para reforzar tu operación.
+			</h1>
+			<p class="mt-6 text-base leading-7 text-slate-600 sm:text-lg">
+				Esta sección reúne contenidos audiovisuales para fortalecer la comprensión de nómina, prestaciones y cumplimiento laboral de forma sencilla.
+			</p>
+		</div>
+	</section>
+
+	<section class="mt-10 grid gap-6 xl:grid-cols-2">
+		{videos.map((video) => (
+			<VideoCard
+				title={video.title}
+				description={video.description}
+				duration={video.duration}
+				category={video.category}
+				videoUrl={video.videoUrl}
+			/>
+		))}
+	</section>
+
+	<section class="mt-10 rounded-[2rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-2xl shadow-slate-950/10 sm:p-8 lg:p-10">
+		<div class="max-w-3xl">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">Sugerencia de uso</p>
+			<h2 class="mt-4 text-3xl font-black tracking-tight text-white">Mira un video por vez y aplica lo aprendido en tu proceso</h2>
+			<p class="mt-5 text-base leading-7 text-slate-300">
+				Usa cada video como una cápsula de formación. Si quieres profundizar, puedes combinar esta sección con el centro de conocimiento y los descargables del sitio.
+			</p>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,43 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+	return posts.map((post) => ({
+		params: { slug: post.slug ?? post.id.split('/').pop() ?? post.id },
+		props: { slug: post.slug ?? post.id.split('/').pop() ?? post.id },
+	}));
+}
+
+const { slug } = Astro.props;
+const post = await getEntry('blog', slug);
+
+if (!post) {
+	throw new Error(`Blog post not found for slug: ${slug}`);
+}
+
+const { Content } = await render(post);
+---
+
+<Layout
+	title={`${post.data.title} | NOMI SMART`}
+	description={post.data.description}
+>
+	<article class="mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+		<img src={post.data.image} alt={post.data.title} class="h-72 w-full object-cover sm:h-[26rem]" />
+		<div class="px-6 py-10 sm:px-10 lg:px-12">
+			<p class="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">{post.data.category}</p>
+			<h1 class="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">{post.data.title}</h1>
+			<div class="mt-5 flex flex-wrap gap-3 text-sm text-slate-500">
+				<span>{post.data.author}</span>
+				<span>•</span>
+				<span>{post.data.pubDate.toLocaleDateString('es-ES')}</span>
+			</div>
+			<div class="prose prose-slate mt-8 max-w-none prose-headings:tracking-tight prose-a:text-sky-700 hover:prose-a:text-sky-900">
+				<Content />
+			</div>
+		</div>
+	</article>
+</Layout>

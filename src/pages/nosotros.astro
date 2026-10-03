@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+	{
+		title: 'Precisión',
+		description: 'Trabajamos con información clara, ordenada y confiable para reducir errores y tomar mejores decisiones.',
+	},
+	{
+		title: 'Transparencia',
+		description: 'Explicamos los temas complejos en un lenguaje directo para que cada equipo entienda el porqué de cada acción.',
+	},
+	{
+		title: 'Responsabilidad',
+		description: 'Promovemos prácticas que fortalezcan el cumplimiento y el control operativo en cada etapa del proceso.',
+	},
+	{
+		title: 'Mejora continua',
+		description: 'Impulsamos aprendizaje constante para que las operaciones evolucionen con criterio y consistencia.',
+	},
+];
+
+const propositionCards = [
+	{
+		title: 'Contenido útil y accionable',
+		description: 'Artículos y recursos pensados para resolver dudas reales y ayudar a aplicar buenas prácticas de inmediato.',
+	},
+	{
+		title: 'Capacitación enfocada en resultados',
+		description: 'Sesiones diseñadas para equipos de nómina, RR. HH. y administración que necesitan claridad operativa.',
+	},
+	{
+		title: 'Recursos descargables',
+		description: 'Formatos, checklists y materiales de apoyo para estandarizar procesos y tener mayor control.',
+	},
+	{
+		title: 'Acompañamiento cercano',
+		description: 'Una forma de trabajo orientada a escuchar, entender el contexto y proponer soluciones prácticas.',
+	},
+];
+---
+
+<Layout
+	title="Nosotros | NOMI SMART"
+	description="Conoce a NOMI SMART: nuestra descripción general, misión, visión, valores corporativos y propuesta de valor para nómina y seguridad social."
+>
+	<section class="rounded-[2rem] border border-slate-200 bg-white px-6 py-12 shadow-sm sm:px-10 lg:px-14">
+		<div class="max-w-3xl">
+			<p class="inline-flex rounded-full bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+				Nosotros
+			</p>
+			<h1 class="mt-5 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+				Una marca creada para entender mejor la nómina, la seguridad social y el cumplimiento.
+			</h1>
+			<p class="mt-6 text-base leading-7 text-slate-600 sm:text-lg">
+				NOMI SMART nace para ayudar a profesionales y equipos de trabajo a operar con mayor claridad, reducir riesgos y tomar decisiones mejor informadas en temas de nómina y seguridad social.
+			</p>
+		</div>
+	</section>
+
+	<section class="mt-10 grid gap-6 lg:grid-cols-3">
+		<article class="rounded-[1.75rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-lg shadow-slate-950/10 lg:col-span-2">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">Descripción general</p>
+			<h2 class="mt-4 text-3xl font-black tracking-tight text-white">Información clara para una operación más segura</h2>
+			<p class="mt-5 max-w-2xl text-base leading-7 text-slate-300">
+				Somos un proyecto enfocado en compartir conocimiento práctico sobre procesos de nómina, obligaciones de seguridad social y criterios que impactan la operación diaria. Nuestro objetivo es traducir temas complejos en contenido comprensible, útil y fácil de aplicar.
+			</p>
+		</article>
+
+		<article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Enfoque</p>
+			<ul class="mt-5 space-y-4 text-sm leading-6 text-slate-600">
+				<li class="rounded-2xl bg-slate-50 p-4">Procesos de nómina más ordenados y consistentes.</li>
+				<li class="rounded-2xl bg-slate-50 p-4">Mejor comprensión de obligaciones y riesgos.</li>
+				<li class="rounded-2xl bg-slate-50 p-4">Herramientas para equipos de RR. HH. y administración.</li>
+			</ul>
+		</article>
+	</section>
+
+	<section class="mt-10 grid gap-6 lg:grid-cols-3">
+		<article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Misión</p>
+			<h2 class="mt-4 text-2xl font-black tracking-tight text-slate-950">Aportar claridad y guía práctica</h2>
+			<p class="mt-5 text-base leading-7 text-slate-600">
+				Brindar contenido, capacitación y recursos que permitan comprender, organizar y fortalecer los procesos relacionados con nómina y seguridad social.
+			</p>
+		</article>
+
+		<article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Visión</p>
+			<h2 class="mt-4 text-2xl font-black tracking-tight text-slate-950">Ser una referencia confiable</h2>
+			<p class="mt-5 text-base leading-7 text-slate-600">
+				Convertirnos en un punto de referencia para personas y equipos que buscan conocimiento serio, aplicable y actualizado para operar con mayor seguridad.
+			</p>
+		</article>
+
+		<article class="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Valores corporativos</p>
+			<div class="mt-5 flex flex-wrap gap-3">
+				{values.map((value) => (
+					<div class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+						{value.title}
+					</div>
+				))}
+			</div>
+		</article>
+	</section>
+
+	<section class="mt-10 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+		<div class="max-w-3xl">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Valores corporativos</p>
+			<h2 class="mt-4 text-3xl font-black tracking-tight text-slate-950">Principios que guían nuestra forma de trabajar</h2>
+		</div>
+
+		<div class="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+			{values.map((value) => (
+				<article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg hover:shadow-slate-200/60">
+					<h3 class="text-xl font-bold text-slate-950">{value.title}</h3>
+					<p class="mt-3 text-sm leading-6 text-slate-600">{value.description}</p>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="mt-10 rounded-[2rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-2xl shadow-slate-950/10 sm:p-8 lg:p-10">
+		<div class="max-w-3xl">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">Propuesta de valor</p>
+			<h2 class="mt-4 text-3xl font-black tracking-tight text-white">Lo que ofrecemos para ayudarte a avanzar</h2>
+			<p class="mt-5 text-base leading-7 text-slate-300">
+				Nuestra propuesta combina contenido claro, herramientas prácticas y acompañamiento cercano para que tu equipo opere con mayor seguridad y enfoque.
+			</p>
+		</div>
+
+		<div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+			{propositionCards.map((card) => (
+				<article class="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:bg-white/10">
+					<h3 class="text-xl font-bold text-white">{card.title}</h3>
+					<p class="mt-3 text-sm leading-6 text-slate-300">{card.description}</p>
+				</article>
+			))}
+		</div>
+	</section>
+</Layout>
