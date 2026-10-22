@@ -77,7 +77,7 @@
 </html>
 
 
-# Crea y cámbiate a una nueva rama llamada "mantenimiento"
+<!--Crea y cámbiate a una nueva rama llamada "mantenimiento"
 git checkout -b mantenimiento
 
 # Añade el archivo index.html (asegúrate de que no haya otros cambios no deseados)
@@ -88,3 +88,36 @@ git commit -m "Añadir página de mantenimiento temporal"
 
 # Sube la rama a GitHub
 git origin push mantenimiento # O simplemente: git push -u origin mantenimiento
+
+Conecta Vercel a esta nueva rama:
+
+Entra a tu panel de Vercel y selecciona tu proyecto.
+
+Ve a la pestaña Settings (Configuración) y haz clic en Git en el menú lateral.
+
+Busca la sección Production Branch (Rama de producción).
+
+Cambia temporalmente la rama de producción de main (o master) a mantenimiento y guarda los cambios.
+
+Vercel detectará el cambio y desplegará automáticamente tu archivo de mantenimiento en tu dominio principal en unos segundos.
+
+¿Cómo revertirlo después?
+Simplemente vuelve a Vercel, cambia la Production Branch de nuevo a main y tu página original regresará al instante sin haber borrado nada.
+
+Método 2: Reemplazar temporalmente el index.html en la rama principal (main)
+Si no quieres complicarte creando ramas y prefieres hacerlo directo sobre tu rama principal:
+
+Guarda una copia de respaldo: Asegúrate de tener guardados los archivos originales de tu proyecto actual en tu computadora por si acaso (aunque Git guarda todo el historial, siempre da tranquilidad).
+
+Añade el archivo de mantenimiento:
+
+Coloca el nuevo archivo index.html en la raíz de tu proyecto (reemplazando o sobreescribiendo el index.html o punto de entrada anterior que tuviera tu web).
+
+Sube los cambios a GitHub:
+Abre tu terminal y ejecuta:
+
+Bash
+git add .
+git commit -m "Pausar sitio temporalmente por mantenimiento"
+git push origin main
+-->
